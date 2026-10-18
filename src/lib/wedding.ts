@@ -37,10 +37,16 @@ export function isVerseReady(config: WeddingConfig = weddingConfig): boolean {
   );
 }
 
-/** Canonical site URL, preferring the deployment environment variable. */
+/**
+ * Canonical site URL: NEXT_PUBLIC_SITE_URL, then the Vercel production domain
+ * (set automatically on Vercel), then the config value.
+ */
 export function getSiteUrl(config: WeddingConfig = weddingConfig): string {
   const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.trim();
-  return fromEnv || config.meta.siteUrl;
+  if (fromEnv) return fromEnv;
+  const vercelDomain = process.env.VERCEL_PROJECT_PRODUCTION_URL?.trim();
+  if (vercelDomain) return `https://${vercelDomain}`;
+  return config.meta.siteUrl;
 }
 
 /** Navigation items whose sections are enabled. */
