@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1280" viewBox="0 0 1920 1280">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="42%" r="75%"><stop offset="0" stop-color="#21564A"/><stop offset="1" stop-color="#173F35"/></radialGradient>
+    
+  <pattern id="p" width="60" height="60" patternUnits="userSpaceOnUse">
+    <g fill="none" stroke="#C6A76B" stroke-width="0.8" opacity="0.18">
+      <path d="M30 0L60 30L30 60L0 30Z"/><path d="M8.8 8.8H51.2V51.2H8.8Z"/><circle cx="30" cy="30" r="8"/>
+    </g>
+  </pattern>
+  </defs>
+  <rect width="1920" height="1280" fill="url(#g)"/>
+  <rect width="1920" height="1280" fill="url(#p)"/>
+  <g fill="none" stroke="#C6A76B" opacity="0.7"><path d="M640 1203.1999999999998V524.2879999999998C640 354.5599999999997 819.2 284.67199999999974 960 204.79999999999973C1100.8 284.67199999999974 1280 354.5599999999997 1280 524.2879999999998V1203.1999999999998" stroke-width="1.6"/><path d="M654 1203.1999999999998V524.2879999999998C654 354.5599999999997 819.2 298.67199999999974 960 218.79999999999973C1100.8 298.67199999999974 1266 354.5599999999997 1266 524.2879999999998V1203.1999999999998" stroke-width="0.9" opacity="0.6"/></g>
+  
+  <g text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" fill="#FAF7F0">
+    <text x="960" y="640" font-size="58" font-style="italic"></text>
+    <text x="960" y="732.8" font-size="24" letter-spacing="6.96" opacity="0.75"></text>
+  </g>
+</svg>

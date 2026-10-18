@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+/*
+ * Palette defaults. The root layout overrides these from src/config/wedding.ts,
+ * so colours are changed in the config — not here.
+ */
+:root {
+  --wedding-ivory: #faf7f0;
+  --wedding-gold: #c6a76b;
+  --wedding-emerald: #173f35;
+  --wedding-sage: #a8b5a0;
+  --wedding-beige: #e9dfd0;
+  --wedding-text: #292a25;
+  --nav-height: 4.25rem;
+}
+
+@theme inline {
+  --color-ivory: var(--wedding-ivory);
+  --color-gold: var(--wedding-gold);
+  --color-emerald: var(--wedding-emerald);
+  --color-sage: var(--wedding-sage);
+  --color-beige: var(--wedding-beige);
+  --color-ink: var(--wedding-text);
+
+  /* Derived tones keep contrast accessible wherever gold is used for text. */
+  --color-gold-ink: color-mix(in oklab, var(--wedding-gold) 50%, var(--wedding-text));
+  --color-gold-soft: color-mix(in oklab, var(--wedding-gold) 35%, var(--wedding-ivory));
+  --color-emerald-deep: color-mix(in oklab, var(--wedding-emerald) 78%, black);
+  --color-emerald-soft: color-mix(in oklab, var(--wedding-emerald) 80%, var(--wedding-sage));
+  --color-ink-muted: color-mix(in oklab, var(--wedding-text) 72%, var(--wedding-ivory));
+
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-jost), "Jost", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: var(--font-amiri), "Amiri", "Traditional Arabic", serif;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-ivory);
+    color: var(--color-ink);
+    overflow-x: clip;
+    -webkit-tap-highlight-color: transparent;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    min-height: 100svh;
+    overflow-x: clip;
+    background-color: var(--color-ivory);
+    font-family: var(--font-sans);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  section[id] {
+    scroll-margin-top: var(--nav-height);
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--wedding-gold) 40%, transparent);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  /* Soft handmade-paper grain, generated with an SVG noise filter (no image request). */
+  .paper {
+    background-color: var(--color-ivory);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.38 0 0 0 0 0.25 0 0 0 0.07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .paper-beige {
+    background-color: var(--color-beige);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.32 0 0 0 0 0.2 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /*
+   * Eight-point star (khatam) tessellation. Applied as a mask so the pattern takes
+   * the element's background colour — e.g. `bg-gold` — and follows the theme.
+   */
+  .islamic-pattern {
+    --pattern-size: 56px;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg fill='none' stroke='black' stroke-width='0.55'%3E%3Cpath d='M20 0L40 20L20 40L0 20Z'/%3E%3Cpath d='M5.86 5.86H34.14V34.14H5.86Z'/%3E%3Ccircle cx='20' cy='20' r='5.5'/%3E%3Cpath d='M20 0V4M20 36V40M0 20H4M36 20H40'/%3E%3C/g%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg fill='none' stroke='black' stroke-width='0.55'%3E%3Cpath d='M20 0L40 20L20 40L0 20Z'/%3E%3Cpath d='M5.86 5.86H34.14V34.14H5.86Z'/%3E%3Ccircle cx='20' cy='20' r='5.5'/%3E%3Cpath d='M20 0V4M20 36V40M0 20H4M36 20H40'/%3E%3C/g%3E%3C/svg%3E");
+    -webkit-mask-size: var(--pattern-size) var(--pattern-size);
+    mask-size: var(--pattern-size) var(--pattern-size);
+    -webkit-mask-repeat: repeat;
+    mask-repeat: repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+  }
+
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+  }
+
+  .display-name {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+
+  .arabic {
+    font-family: var(--font-arabic);
+    direction: rtl;
+    unicode-bidi: isolate;
+    line-height: 1.9;
+  }
+
+  .gold-hairline {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--color-gold) 20%,
+      var(--color-gold) 80%,
+      transparent
+    );
+  }
+}
+
+/* Floating light particles on the cover. Disabled for reduced-motion users. */
+@keyframes float-up {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0;
+  }
+  15% {
+    opacity: var(--particle-opacity, 0.6);
+  }
+  85% {
+    opacity: var(--particle-opacity, 0.6);
+  }
+  100% {
+    transform: translate3d(var(--drift, 12px), -60vh, 0) scale(0.6);
+    opacity: 0;
+  }
+}
+
+.particle {
+  animation: float-up var(--duration, 14s) linear var(--delay, 0s) infinite;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .particle {
+    animation: none;
+    display: none;
+  }
+}
