@@ -32,7 +32,7 @@ export interface PersonProfile {
   /** Short biography or personal message. */
   bio: string;
   /**
-   * Optional portrait. Leave undefined to show an ornamental monogram instead —
+   * Optional portrait. Leave undefined to show the profile as text only —
    * the template never assumes a photograph should be shown.
    */
   image?: ImageAsset;
