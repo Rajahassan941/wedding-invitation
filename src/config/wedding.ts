@@ -14,14 +14,13 @@ import type { WeddingConfig } from "@/types/wedding";
  */
 export const weddingConfig: WeddingConfig = {
   meta: {
-    title: "Bride Name & Groom Name — Nikah Invitation",
-    description:
-      "With gratitude to Allah, Bride Name and Groom Name invite you to celebrate their Nikah.",
+    title: "Rinsha & Rafid — Nikah Invitation",
+    description: "With gratitude to Allah, Rinsha and Rafid invite you to celebrate their Nikah.",
     siteUrl: "https://example.com",
     locale: "en-GB",
     lang: "en",
     allowIndexing: false,
-    ogImageAlt: "Nikah invitation for Bride Name and Groom Name",
+    ogImageAlt: "Nikah invitation for Rinsha and Rafid",
   },
 
   theme: {
@@ -43,13 +42,11 @@ export const weddingConfig: WeddingConfig = {
 
   couple: {
     bride: {
-      fullName: "Bride Full Name",
-      displayName: "Bride Name",
+      fullName: "Rinsha.K",
+      displayName: "Rinsha",
       role: "The Bride",
       parentsLabel: "Daughter of",
-      parents: "Mr. Bride's Father & Mrs. Bride's Mother",
-      familyDetails: "Granddaughter of the Bride Family · Hometown",
-      bio: "Add a short introduction or personal message from the bride here. Two or three sentences work beautifully.",
+      parents: "Mr. Unneedu.K & Mrs. Hafsath.K",
     },
     groom: {
       fullName: "Ahamed Rafid",
@@ -57,8 +54,6 @@ export const weddingConfig: WeddingConfig = {
       role: "The Groom",
       parentsLabel: "Son of",
       parents: "Mr. Asainar & Mrs. Nigar Sulthan",
-      familyDetails: "Grandson of the Groom Family · Hometown",
-      bio: "Add a short introduction or personal message from the groom here. Two or three sentences work beautifully.",
     },
     order: "bride-first",
     joiner: "&",
@@ -71,7 +66,6 @@ export const weddingConfig: WeddingConfig = {
     title: "Nikah Invitation",
     message:
       "With gratitude to Allah and the blessings of our families, we invite you to celebrate our Nikah.",
-    hashtag: "#BrideAndGroom2026",
   },
 
   cover: {
@@ -83,11 +77,6 @@ export const weddingConfig: WeddingConfig = {
   hero: {
     label: "Nikah Invitation",
     message: "Two hearts, one faith, and a lifetime of mercy and love.",
-    image: {
-      src: "/images/hero-placeholder.svg",
-      alt: "Placeholder hero background — replace with a portrait, venue or floral photograph",
-      position: "50% 50%",
-    },
     overlayOpacity: 0.55,
     scrollLabel: "Scroll",
   },
@@ -108,43 +97,27 @@ export const weddingConfig: WeddingConfig = {
   events: {
     eyebrow: "The Celebrations",
     heading: "Wedding Events",
-    intro: "Sample schedule — add, remove or reorder events in the configuration file.",
+    intro: "We would be honoured by your presence at both celebrations.",
     items: [
-      // {
-      //   id: "family-evening",
-      //   label: "Family Celebration",
-      //   name: "Mehndi Evening",
-      //   start: "2026-11-28T18:00:00+05:30",
-      //   end: "2026-11-28T21:30:00+05:30",
-      //   venueName: "Family Event Venue Name",
-      //   address: "Add the complete venue address, City, Postcode",
-      //   dressCode: "Colourful traditional attire",
-      //   description: "An intimate evening of henna, music and family.",
-      //   isPlaceholder: true,
-      // },
       {
         id: "nikah",
         label: "Ceremony",
-        name: "Nikah Ceremony",
-        start: "2026-11-29T10:00:00+05:30",
-        end: "2026-11-29T12:30:00+05:30",
-        venueName: "Ceremony Venue Name",
-        address: "Add the complete venue address, City, Postcode",
-        dressCode: "Modest formal attire",
-        description: "The Nikah will be followed by a light lunch for family and guests.",
-        isPlaceholder: true,
+        name: "Nikah",
+        start: "2026-11-29T10:30:00+05:30",
+        end: "2026-11-29T13:00:00+05:30",
+        venueName: "Metro Auditorium",
+        address: "Aravankara, Pookkottur",
+        mapsUrl: "https://maps.app.goo.gl/tspipkSt2gFWtwmz6",
       },
-      // {
-      //   id: "walima",
-      //   label: "Reception",
-      //   name: "Walima Dinner",
-      //   start: "2026-11-30T19:00:00+05:30",
-      //   end: "2026-11-30T22:30:00+05:30",
-      //   venueName: "Reception Venue Name",
-      //   address: "Add the complete venue address, City, Postcode",
-      //   dressCode: "Formal / evening wear",
-      //   isPlaceholder: true,
-      // },
+      {
+        id: "walima",
+        label: "Reception",
+        name: "Walima",
+        start: "2026-11-29T16:00:00+05:30",
+        venueName: "MI Auditorium",
+        address: "Narokkavu, Marutha Road, Marutha, Kerala 679331",
+        mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=98X6%2BM5C%2C%20Marutha%20Rd%2C%20Marutha%2C%20Kerala%20679331",
+      },
     ],
   },
 
@@ -174,7 +147,7 @@ export const weddingConfig: WeddingConfig = {
       "Placeholder story — share how you met, how your families came together, or a few words written by a parent. Keep it short and heartfelt.",
       "A second paragraph can describe the proposal, a shared memory, or your hopes for the life ahead. Disable this section with `features.story: false`.",
     ],
-    signature: "With love, Bride Name & Ahamed Rafid",
+    signature: "With love, Rinsha & Rafid",
   },
 
   gallery: {
@@ -193,12 +166,7 @@ export const weddingConfig: WeddingConfig = {
 
   venue: {
     eyebrow: "Location",
-    heading: "Venue & Directions",
-    name: "Wedding Venue Name",
-    address: "Add the complete venue address, Street, City, Postcode, Country",
-    mapsUrl: "",
-    embedUrl: "",
-    notes: "Placeholder: add parking, entrance or prayer-room details here.",
+    heading: "Venues & Directions",
   },
 
   rsvp: {
@@ -227,7 +195,7 @@ export const weddingConfig: WeddingConfig = {
 
   footer: {
     madeWith: "Made with love",
-    credit: "for Bride Name & Ahamed Rafid",
+    credit: "for Rinsha & Rafid",
   },
 
   navigation: [
@@ -235,7 +203,7 @@ export const weddingConfig: WeddingConfig = {
     { href: "#events", label: "Events", feature: "events" },
     { href: "#story", label: "Story", feature: "story" },
     { href: "#gallery", label: "Gallery", feature: "gallery" },
-    { href: "#venue", label: "Venue", feature: "venue" },
+    { href: "#venue", label: "Venues", feature: "venue" },
     { href: "#rsvp", label: "RSVP", feature: "rsvp" },
   ],
 

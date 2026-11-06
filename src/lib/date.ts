@@ -38,13 +38,14 @@ export function formatDotDate(iso: string, locale: string, timeZone: string): st
   return `${get("day")} · ${get("month")} · ${get("year")}`;
 }
 
-/** "10:00 am" */
+/** "10:30 am" — always 12-hour, which reads naturally on an invitation. */
 export function formatTime(iso: string, locale: string, timeZone: string): string {
-  return formatter(locale, timeZone, { hour: "numeric", minute: "2-digit" }).format(new Date(iso));
+  return formatter(locale, timeZone, { hour: "numeric", minute: "2-digit", hour12: true }).format(new Date(iso));
 }
 
-/** "10:00 am – 12:30 pm" */
-export function formatTimeRange(start: string, end: string, locale: string, timeZone: string): string {
+/** "10:30 am – 1:00 pm", or "4:00 pm onwards" when there is no end time. */
+export function formatTimeRange(start: string, end: string | undefined, locale: string, timeZone: string): string {
+  if (!end) return `${formatTime(start, locale, timeZone)} onwards`;
   return `${formatTime(start, locale, timeZone)} – ${formatTime(end, locale, timeZone)}`;
 }
 

@@ -10,6 +10,9 @@ export interface CalendarEvent {
   description: string;
 }
 
+/** Calendar entries need an end time; open-ended events get a nominal three-hour slot. */
+const DEFAULT_DURATION_MS = 3 * 60 * 60 * 1000;
+
 export function toCalendarEvent(event: WeddingEvent, coupleNames: string): CalendarEvent {
   const details = [event.description, event.dressCode ? `Dress code: ${event.dressCode}` : ""]
     .filter(Boolean)
@@ -18,7 +21,7 @@ export function toCalendarEvent(event: WeddingEvent, coupleNames: string): Calen
     id: event.id,
     title: `${event.name} — ${coupleNames}`,
     start: event.start,
-    end: event.end,
+    end: event.end ?? new Date(new Date(event.start).getTime() + DEFAULT_DURATION_MS).toISOString(),
     location: `${event.venueName}, ${event.address}`,
     description: details,
   };

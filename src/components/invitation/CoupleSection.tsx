@@ -57,9 +57,11 @@ function ProfileCard({ person }: { person: PersonProfile }) {
           <p className="mt-2 text-xs tracking-wide text-ink-muted">{person.familyDetails}</p>
         </RevealItem>
       )}
-      <RevealItem>
-        <p className="mx-auto mt-6 max-w-sm text-pretty text-[0.95rem] text-ink-muted">{person.bio}</p>
-      </RevealItem>
+      {person.bio && (
+        <RevealItem>
+          <p className="mx-auto mt-6 max-w-sm text-pretty text-[0.95rem] text-ink-muted">{person.bio}</p>
+        </RevealItem>
+      )}
     </RevealGroup>
   );
 }

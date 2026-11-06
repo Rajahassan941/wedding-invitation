@@ -4,7 +4,7 @@ import { Reveal } from "@/components/ui/AnimatedSection";
 import { ButtonLink } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { toCalendarEvent } from "@/lib/calendar";
-import { formatLongDate, formatTimeRange, getDateBadge } from "@/lib/date";
+import { formatLongDate, formatTime, formatTimeRange, getDateBadge } from "@/lib/date";
 import { getDirectionsUrl } from "@/lib/maps";
 import { cn } from "@/lib/utils";
 import { getCoupleNames } from "@/lib/wedding";
@@ -59,7 +59,9 @@ function EventCard({ event, index }: { event: WeddingEvent; index: number }) {
                 <time dateTime={event.start}>{formatLongDate(event.start, locale, timezone)}</time>
                 <br />
                 <span className="text-ink-muted">
-                  {formatTimeRange(event.start, event.end, locale, timezone)} {timezoneLabel}
+                  {event.end
+                    ? `${formatTimeRange(event.start, event.end, locale, timezone)} ${timezoneLabel}`
+                    : `${formatTime(event.start, locale, timezone)} ${timezoneLabel} onwards`}
                 </span>
               </dd>
             </div>

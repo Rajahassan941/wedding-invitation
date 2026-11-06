@@ -29,8 +29,8 @@ export interface PersonProfile {
   parents: string;
   /** Optional extra family details (grandparents, hometown, siblings…). */
   familyDetails?: string;
-  /** Short biography or personal message. */
-  bio: string;
+  /** Optional short biography or personal message. */
+  bio?: string;
   /**
    * Optional portrait. Leave undefined to show the profile as text only —
    * the template never assumes a photograph should be shown.
@@ -55,8 +55,8 @@ export interface WeddingEvent {
   label?: string;
   /** ISO 8601 with UTC offset, e.g. "2027-01-15T10:00:00+05:30". */
   start: string;
-  /** ISO 8601 with UTC offset. */
-  end: string;
+  /** Optional ISO 8601 end time. Omit for open-ended events (shown as "4:00 pm onwards"). */
+  end?: string;
   venueName: string;
   address: string;
   /** Google Maps link. If omitted, a directions link is generated from the address. */
@@ -222,20 +222,10 @@ export interface WeddingConfig {
     images: GalleryImage[];
   };
 
+  /** Venue section heading. Venues themselves come from `events.items`. */
   venue: {
     eyebrow: string;
     heading: string;
-    name: string;
-    address: string;
-    /** Google Maps share link. If empty, a directions link is generated from the address. */
-    mapsUrl: string;
-    /**
-     * Google Maps embed URL (from Maps → Share → Embed a map → copy the `src`).
-     * Must start with https://www.google.com/maps/embed — otherwise no iframe is rendered.
-     */
-    embedUrl: string;
-    notes?: string;
-    image?: ImageAsset;
   };
 
   rsvp: {

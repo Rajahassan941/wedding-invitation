@@ -38,7 +38,7 @@ Open `src/config/wedding.ts`. Every field is typed (see `src/types/wedding.ts`) 
 | Islamic message & optional verse | `islamicMessage` |
 | Optional story | `story` + `features.story` |
 | Gallery | `gallery.images` |
-| Venue, map & directions | `venue` |
+| Venues & directions (one card per venue, built from the events) | `events.items` + `venue` heading |
 | RSVP labels & guest limit | `rsvp` |
 | Colours | `theme.colors` |
 | Social title / description | `meta` |
