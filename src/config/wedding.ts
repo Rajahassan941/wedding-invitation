@@ -14,13 +14,13 @@ import type { WeddingConfig } from "@/types/wedding";
  */
 export const weddingConfig: WeddingConfig = {
   meta: {
-    title: "Rinsha & Rafid — Nikah Invitation",
-    description: "With gratitude to Allah, Rinsha and Rafid invite you to celebrate their Nikah.",
+    title: "Rafid & Rinsha — Nikah Invitation",
+    description: "With gratitude to Allah, Rafid and Rinsha invite you to celebrate their Nikah.",
     siteUrl: "https://example.com",
     locale: "en-GB",
     lang: "en",
     allowIndexing: false,
-    ogImageAlt: "Nikah invitation for Rinsha and Rafid",
+    ogImageAlt: "Nikah invitation for Rafid and Rinsha",
   },
 
   theme: {
@@ -55,7 +55,7 @@ export const weddingConfig: WeddingConfig = {
       parentsLabel: "Son of",
       parents: "Mr. Asainar & Mrs. Nigar Sulthan",
     },
-    order: "bride-first",
+    order: "groom-first",
     joiner: "&",
   },
 
@@ -83,7 +83,7 @@ export const weddingConfig: WeddingConfig = {
 
   coupleSection: {
     eyebrow: "The Couple",
-    heading: "Bride & Groom",
+    heading: "Groom & Bride",
     intro: "Brought together by the will of Allah and the love of our families.",
   },
 
@@ -147,7 +147,7 @@ export const weddingConfig: WeddingConfig = {
       "Placeholder story — share how you met, how your families came together, or a few words written by a parent. Keep it short and heartfelt.",
       "A second paragraph can describe the proposal, a shared memory, or your hopes for the life ahead. Disable this section with `features.story: false`.",
     ],
-    signature: "With love, Rinsha & Rafid",
+    signature: "With love, Rafid & Rinsha",
   },
 
   gallery: {
@@ -195,7 +195,7 @@ export const weddingConfig: WeddingConfig = {
 
   footer: {
     madeWith: "Made with love",
-    credit: "for Rinsha & Rafid",
+    credit: "for Rafid & Rinsha",
   },
 
   navigation: [
