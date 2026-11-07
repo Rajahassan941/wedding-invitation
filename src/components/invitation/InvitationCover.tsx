@@ -326,7 +326,8 @@ export function InvitationCover(props: InvitationCoverProps) {
               <g fill="none" stroke="var(--color-gold)" strokeWidth="1" vectorEffect="non-scaling-stroke">
                 <path d="M0 0L50 38L100 0" opacity="0.9" vectorEffect="non-scaling-stroke" />
                 <path d="M0 70L42 40M100 70L58 40" opacity="0.45" vectorEffect="non-scaling-stroke" />
-                <rect x="0" y="0" width="100" height="70" opacity="0.5" vectorEffect="non-scaling-stroke" />
+                {/* Sides and bottom only: a top edge here would cut across the letter as it rises. */}
+                <path d="M0 0V70H100V0" opacity="0.5" vectorEffect="non-scaling-stroke" />
               </g>
             </svg>
           </EnvelopeLayer>
